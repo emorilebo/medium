@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "crux_medium"
+    "name": "crux__medium"
   },
   "api": {
-    "projectId": "yyjs523l",
+    "projectId": "ng90fj0f",
     "dataset": "production"
   },
   "plugins": [
