@@ -10,6 +10,16 @@ export default function Home() {
       </Head>
 
       <Header />
+      <div>
+        <div>
+          <h1>CuriousityExploring is a place tto write, read and connect</h1>
+          <h2>
+            It is easy and free to post your thinking on any topic and connect
+            with millions of folks
+          </h2>
+        </div>
+        <div></div>
+      </div>
     </div>
   );
 }
