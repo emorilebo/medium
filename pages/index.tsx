@@ -23,7 +23,7 @@ export default function Home() {
             with millions of folks
           </h2>
         </div>
-        <img src="" alt="" />
+        <img src="creglogo.png" alt="" />
       </div>
     </div>
   );
