@@ -23,7 +23,7 @@ export default function Home() {
             with millions of folks
           </h2>
         </div>
-        <div></div>
+        <img src="" alt="" />
       </div>
     </div>
   );
