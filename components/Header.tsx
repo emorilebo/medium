@@ -4,7 +4,7 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <div>
+      <div className="flex">
         <Link href="/">
           <img
             className="w-44 object-contain cursor-pointer"
@@ -13,7 +13,11 @@ function Header() {
           />
         </Link>
 
-        <h1>Medium Blog</h1>
+        <div className="hidden md:inline-flex items-center space-x-5">
+          <h3>About</h3>
+          <h3>Contact</h3>
+          <h3>Follow</h3>
+        </div>
       </div>
       <div></div>
     </header>
