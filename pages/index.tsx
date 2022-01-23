@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="max-w-7xl mx-auto">
       <Head>
         <title>Curious Medium</title>
         <link rel="icon" href="/favicon.ico" />
@@ -25,6 +25,7 @@ export default function Home() {
         </div>
         <img className="hidden md:inline-flex h-32 lg:h-full" src="creglogo.png" alt="" />
       </div>
+      {/* post */}
     </div>
   );
 }
