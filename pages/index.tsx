@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
+import {sanityClient, urlFor} from '../sanity';
 
 export default function Home() {
   return (
@@ -23,13 +24,37 @@ export default function Home() {
             with millions of folks
           </h2>
         </div>
-        <img className="hidden md:inline-flex h-32 lg:h-full" src="creglogo.png" alt="" />
+        <img
+          className="hidden md:inline-flex h-32 lg:h-full"
+          src="creglogo.png"
+          alt=""
+        />
       </div>
       {/* post */}
     </div>
   );
 }
 
-export const getServerSideProps = async ()=>{
-  const query = 
-}
+export const getServerSideProps = async () => {
+  const query = `
+  *[_type == "post"]{
+    _id,
+    title,
+    author ->{
+    name,
+    image,
+  },
+  description,
+  mainImage,
+  slug
+  }
+  `;
+
+  const posts = await sanityClient.fetch(query);
+
+  return {
+    props:{
+      posts,
+    }
+  }
+};
