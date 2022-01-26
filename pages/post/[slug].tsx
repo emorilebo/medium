@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
+import { Post } from "../../typings";
 
 function Post() {
   return (
@@ -18,4 +19,10 @@ export const getStaticPaths = async () => {
     current
   }
   }`;
+  const posts = await sanityClient.fetch(query);
+  const paths = posts.map((post: Post) => ({
+    params: {
+      slug: post.slug.current,
+    },
+  }));
 };
