@@ -53,5 +53,7 @@ export const getStaticProps: GetStaticProps = async ({params})=>{
   body
   }  `;
 
-  
+  const post = await sanityClient.fetch(query, {
+    slug: params?.slug
+  })
 }
