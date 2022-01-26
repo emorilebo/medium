@@ -3,7 +3,13 @@ import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 
-function Post() {
+interface Props{
+  post: Post;
+}
+
+
+function Post({post}: Props) {
+  console.log(post)
   return (
     <main>
       <Header />
@@ -55,5 +61,15 @@ export const getStaticProps: GetStaticProps = async ({params})=>{
 
   const post = await sanityClient.fetch(query, {
     slug: params?.slug
-  })
+  });
+
+  if(!post){
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    porps:
+  }
 }
