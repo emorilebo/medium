@@ -58,9 +58,15 @@ function Post({ post }: Props) {
             }}
           />
         </div>
-        
       </article>
-      <hr  className="max-w-lg my-5 mx-auto border border-yellow-500"/>
+      <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
+
+      <form>
+        <label>
+          <span>Name</span>
+          <input placeholder="Francis Ekpen" type="text" />
+        </label>
+      </form>
     </main>
   );
 }
