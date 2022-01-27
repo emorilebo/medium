@@ -66,6 +66,15 @@ function Post({ post }: Props) {
           <span>Name</span>
           <input placeholder="Francis Ekpen" type="text" />
         </label>
+        <label>
+          <span>Email</span>
+          <input placeholder="francis@gmail.com" type="text" />
+        </label>
+        <label>
+          <span>Comment</span>
+          <textarea placeholder="What's on your mind?" rows={8} />
+        </label>
+       
       </form>
     </main>
   );
