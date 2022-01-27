@@ -3,13 +3,12 @@ import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 
-interface Props{
+interface Props {
   post: Post;
 }
 
-
-function Post({post}: Props) {
-  console.log(post)
+function Post({ post }: Props) {
+  console.log(post);
   return (
     <main>
       <Header />
@@ -33,14 +32,13 @@ export const getStaticPaths = async () => {
     },
   }));
 
-  return{
+  return {
     paths,
-    fallback: 'blocking'
-  }
+    fallback: "blocking",
+  };
 };
 
-
-export const getStaticProps: GetStaticProps = async ({params})=>{
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const query = `*[_type == "post" && slug.current == $slug][0]{
     _id,
     _createdAt,
@@ -60,16 +58,18 @@ export const getStaticProps: GetStaticProps = async ({params})=>{
   }  `;
 
   const post = await sanityClient.fetch(query, {
-    slug: params?.slug
+    slug: params?.slug,
   });
 
-  if(!post){
+  if (!post) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
-    porps:
-  }
-}
+    props: {
+      post,
+    },
+  };
+};
