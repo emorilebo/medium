@@ -5,12 +5,23 @@ import { Post } from "../../typings";
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+interface IFormInput {
+  _id: string;
+  name: string;
+  email: string;
+  comment: string;
+}
+
 interface Props {
   post: Post;
 }
 
 function Post({ post }: Props) {
-  const {register, handleSubmit, errors} = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>();
   return (
     <main>
       <Header />
@@ -67,6 +78,12 @@ function Post({ post }: Props) {
         <h3 className="text-sm text-yellow-500">Enjoyed this article?</h3>
         <h4 className="text-3xl font-bold">Leave a comment below!</h4>
         <hr className="py-3 mt-2" />
+
+        <input 
+        {...register("_id")} 
+        type="hidden" 
+        name="_id" 
+        value={post._id} />
 
         <label className="block mb-5">
           <span className="text-gray-700">Name</span>
