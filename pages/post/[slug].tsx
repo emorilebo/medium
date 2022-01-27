@@ -8,10 +8,14 @@ interface Props {
 }
 
 function Post({ post }: Props) {
-  console.log(post);
   return (
     <main>
       <Header />
+      <img
+        className="w-full h-40 object-cover"
+        src={urlFor(post.mainImage).url()!}
+        alt=""
+      />
     </main>
   );
 }
