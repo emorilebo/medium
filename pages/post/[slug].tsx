@@ -62,7 +62,7 @@ function Post({ post }: Props) {
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
       <form className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-        <h3>Enjoyed this article?</h3>
+        <h3 className="text-sm text-yellow-500">Enjoyed this article?</h3>
         <h4 className="text-3xl font-bold">Leave a comment below!</h4>
         <hr className="py-3 mt-2" />
         <label>
