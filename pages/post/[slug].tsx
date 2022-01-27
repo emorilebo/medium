@@ -79,15 +79,12 @@ function Post({ post }: Props) {
         <h4 className="text-3xl font-bold">Leave a comment below!</h4>
         <hr className="py-3 mt-2" />
 
-        <input 
-        {...register("_id")} 
-        type="hidden" 
-        name="_id" 
-        value={post._id} />
+        <input {...register("_id")} type="hidden" name="_id" value={post._id} />
 
         <label className="block mb-5">
           <span className="text-gray-700">Name</span>
           <input
+            {...register("name", { required: true })}
             className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
             placeholder="Francis Ekpen"
             type="text"
@@ -96,6 +93,7 @@ function Post({ post }: Props) {
         <label className="block mb-5">
           <span className="text-gray-700">Email</span>
           <input
+            {...register("email", { required: true })}
             className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
             placeholder="francis@gmail.com"
             type="text"
@@ -104,6 +102,7 @@ function Post({ post }: Props) {
         <label className="block mb-5">
           <span className="text-gray-700">Comment</span>
           <textarea
+            {...register("comment", { required: true })}
             className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring"
             placeholder="What's on your mind?"
             rows={8}
