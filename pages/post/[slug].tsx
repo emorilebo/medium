@@ -18,7 +18,10 @@ function Post({ post }: Props) {
       />
       <article className="max-w-3xl mx-auto p-5">
         <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
-        <h2></h2>
+        <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
+        <div>
+          <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt="" />
+        </div>
       </article>
     </main>
   );
