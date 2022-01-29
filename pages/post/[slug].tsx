@@ -4,6 +4,7 @@ import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
 
 interface IFormInput {
   _id: string;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 function Post({ post }: Props) {
+  const [submitted, setSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
@@ -30,9 +32,11 @@ function Post({ post }: Props) {
     })
       .then(() => {
         console.log(data);
+        setSubmitted(true);
       })
       .catch((err) => {
         console.log(err);
+        setSubmitted(false);
       });
   };
   return (
