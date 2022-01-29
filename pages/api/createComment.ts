@@ -28,7 +28,9 @@ export default async function createComment(
             email,
             comment
             
-        })
+        });
+    }catch(err){
+        console.log(err)
     }
   res.status(200).json({ name: 'John Doe' })
 }
