@@ -19,6 +19,7 @@ interface Props {
 
 function Post({ post }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  console.log(post);
   const {
     register,
     handleSubmit,
@@ -93,7 +94,9 @@ function Post({ post }: Props) {
 
       {submitted ? (
         <div className="flex flex-col p-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto">
-          <h3 className="text-3xl font-bold">Thank you for submitting your comment!</h3>
+          <h3 className="text-3xl font-bold">
+            Thank you for submitting your comment!
+          </h3>
           <p>Once it has been approved, it will appear below!</p>
         </div>
       ) : (
@@ -168,13 +171,16 @@ function Post({ post }: Props) {
       )}
 
       {/* Comments */}
-      <div>
-        <h3>Comments</h3>
-        <hr />
+      <div className="flex flex-col p-10 my-10 max-w-2xl mx-autp shadow-yellow-500 shadpw space-y-2">
+        <h3 className="text-4xl">Comments</h3>
+        <hr className="pb-2" />
 
-        {post.comments.map((comment)=>(
-          <div>
-            <p>{comment.name}: {comment.comment}</p>
+        {post.comments.map((comment) => (
+          <div key={comment._id}>
+            <p className="">
+              <span className="text-yellow-500">{comment.name}: </span>{" "}
+              {comment.comment}
+            </p>
           </div>
         ))}
       </div>
