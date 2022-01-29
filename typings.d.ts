@@ -17,3 +17,14 @@ export interface Post{
     }
     body: [object];
 }
+
+export interface Comment{
+    approved: boolean;
+    comment: string;
+    email: string;
+    name: string;
+    post: {
+        _ref: string;
+        _type: string;
+    }
+}
