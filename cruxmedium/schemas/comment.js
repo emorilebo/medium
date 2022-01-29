@@ -21,5 +21,10 @@ export default {
             name: 'comment',
             type: 'text',
         },
+        {
+            name: 'post',
+            type: 'reference',
+            to: [{type: 'post'}],
+        },
     ],
-}
+};
