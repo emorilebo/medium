@@ -166,6 +166,18 @@ function Post({ post }: Props) {
           />
         </form>
       )}
+
+      {/* Comments */}
+      <div>
+        <h3>Comments</h3>
+        <hr />
+
+        {post.comments.map((comment)=>(
+          <div>
+            <p>{comment.name}: {comment.comment}</p>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
