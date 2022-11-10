@@ -15,11 +15,11 @@ function Header() {
 
         <div className="hidden md:inline-flex items-center space-x-5">
           <Link href="/about">
-            <h3>About</h3>
+          <h3>About</h3>
           </Link>
-
+          
           <h3>Contact</h3>
-          <h3 className="text-white bg-yellow-500 text-sm font-medium cursor-pointer px-4 py-1 rounded-full">
+          <h3 className="text-white bg-yellow-500 px-4 py-1 rounded-full">
             Follow
           </h3>
         </div>
